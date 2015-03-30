@@ -46,8 +46,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\Binaries\Ionic.BZip2.dll</HintPath>
     </Reference>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA004\lib\net45\MahApps.Metro.dll</HintPath>
+    <Reference Include="MahApps.Metro, Version=1.0.1.47, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="QueryMaster, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -56,7 +57,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA004\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.1.0.1-ALPHA047\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -83,11 +84,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Model\Classes\ClassBase.cs" />
-    <Compile Include="Model\Classes\Server.cs" />
-    <Compile Include="Model\Classes\SteamInfo.cs" />
-    <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="ViewModel\ViewModelMain.cs" />
+    <Compile Include="Model\Classes\BaseModel.cs" />
+    <Compile Include="Model\Classes\MirrorCollectionModel.cs" />
+    <Compile Include="Model\Classes\MirrorModel.cs" />
+    <Compile Include="Model\Classes\ServerModel.cs" />
+    <Compile Include="Model\Classes\ServerSetModel.cs" />
+    <Compile Include="Model\Classes\SteamModel.cs" />
+    <Compile Include="Model\Enums\AddonType.cs" />
+    <Compile Include="Model\Enums\GameType.cs" />
+    <Compile Include="Model\Enums\ModDestination.cs" />
+    <Compile Include="Model\Utilities\XMLSerializer.cs" />
+    <Compile Include="ViewModel\ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModel\ViewModels\MainVM.cs" />
+    <Compile Include="ViewModel\ViewModels\ServerVM.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -135,6 +144,7 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Data\" />
+    <Folder Include="ViewModel\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Tomato_16x16.png" />
@@ -142,6 +152,7 @@
   <ItemGroup>
     <Content Include="Resources\Binaries\Ionic.BZip2.dll" />
     <Content Include="Resources\Binaries\QueryMaster.dll" />
+    <SplashScreen Include="Resources\Images\SplashScreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

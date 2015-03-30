@@ -7,11 +7,11 @@ using System.Windows;
 using System.Windows.Threading;
 using System.Runtime.CompilerServices;
 
-namespace Launcher.ViewModel
+namespace Launcher.ViewModels.ViewModel
 {
-    public class ViewModelBase : INotifyPropertyChanged
+    public class BaseVM : INotifyPropertyChanged
     {
-        //basic ViewModelBase
+        //basic BaseVM
         internal void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
